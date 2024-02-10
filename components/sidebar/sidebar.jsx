@@ -2,9 +2,7 @@
 
 const Sidebar = () =>{
     return(
-       
         <NestedList/>
-       
     )
 }
 export default Sidebar;
@@ -46,7 +44,7 @@ function NestedList() {
     }
 
   return (
-    <List
+    <List className=' fixed top-0 left-0'
       sx={{ width: '100%', maxWidth:menu , minHeight:900, bgcolor: '#2f363e', color: '#828690',overflow:'hidden',transition:'.4s' }}
       component="nav"
       aria-labelledby="nested-list-subheader" 

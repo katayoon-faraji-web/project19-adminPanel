@@ -1,10 +1,20 @@
 'use client'
-import SplineArea from '../../components/splineArea/chart'
+// import SplineArea from '../../components/splineArea/chart'
+// import SplineAreaMUI from '../../components/splineAreaMUI/chart'
+import SplineAreaRecharts from '../splineAreaRecharts1/chart'
+import SplineAreaRecharts2 from '../splineAreaRecharts2/chart'
+import StackedAreaAchart from '../stackedAreaRecharts/chart'
 const RightSidebar = () =>{
     return(
-        <div className="w-[23%] h-[100vh] fixed top-0 right-0 border-l-4 border-black flex flex-wrap justify-start content-start">
-            <Box_chart>
-                <SplineArea/>
+        <div className="w-[23%] h-[100vh] fixed px-4 top-0 right-0 border-l-4 border-black flex flex-wrap justify-start content-start bg-[#2f363e]">
+            <Box_chart title={'total sale'} info={'$245.90'}>
+                <SplineAreaRecharts/>
+            </Box_chart>
+            <Box_chart title={'total session'} info={'845'}>
+                <SplineAreaRecharts2/>
+            </Box_chart>
+            <Box_chart title={'Customer rate'} info={'5.12%'}>
+                <StackedAreaAchart/>
             </Box_chart>
                 
             
@@ -14,14 +24,13 @@ const RightSidebar = () =>{
 export default  RightSidebar;
 
 
-const Box_chart = ({children}) =>{
+const Box_chart = ({children,title,info}) =>{
     return(
-        <div className="w-full h-[250px] flex justify-start items-center border border-white rounded-lg">
-            <div className='w-full h-[80%] flex justify-between items-center'>
-                <div className='w-[40%] flex flex-wrap justify-start content-center'>
-                    <span>total sale</span>
-                    <span>$254.90</span>
-
+        <div className="w-full h-[220px]  flex flex-wrap justify-start mt-4 items-center border border-white rounded-lg ">
+            <div className='w-full h-[80%] flex justify-between items-center px-4'>
+                <div className='w-[30%] flex flex-wrap justify-start content-center'>
+                    <span>{title}</span>
+                    <span>{info}</span>
                 </div>
                 {children}
             </div>

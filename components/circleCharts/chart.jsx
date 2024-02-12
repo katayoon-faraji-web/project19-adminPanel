@@ -1,26 +1,28 @@
 
 'use client'
-import React from 'react';
+import React, { useState } from 'react';
 import { PieChart, Pie, Cell, ResponsiveContainer } from 'recharts';
 
 
-const data = [
-  { name: 'Group A', value: 300},
-  { name: 'Group B', value: 1200 },
 
-];
-const COLORS = ['#fb3e7a','#0f8874'];
+const COLORS = ['#b5b5c3','#0f8874'];
 
-const PieCharts = () => {
+const PieCharts = ({value1,value2}) => {
+  const data = [
+    { name: 'Group A', value: value1},
+    { name: 'Group B', value: value2 },
+  
+  ];
+
   return (
-    <ResponsiveContainer className='bg-red-400' width={150} height={150}>
+    <ResponsiveContainer  width={100} height={100}>
       <PieChart  >
         <Pie startAngle={90} endAngle={450}
           data={data}
-          cx={75}
-          cy={75}
-          innerRadius={40}
-          outerRadius={60}
+          cx={50}
+          cy={50}
+          innerRadius={30}
+          outerRadius={40}
           fill="#8884d8"
           paddingAngle={5}
           dataKey="value"

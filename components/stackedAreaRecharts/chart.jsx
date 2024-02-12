@@ -57,7 +57,7 @@ const StackedAreaAchart = () => {
         <CartesianGrid stroke='transparent' />
         <XAxis dataKey="day" includeHidden tick={false}/>
         <YAxis type="number" includeHidden tick={false}/>
-        <Tooltip />
+        <Tooltip contentStyle={{fontSize:'12px'}}/>
         <Area type="monotone" dataKey="fisrtTime"  stroke="#fb3e7a" fill="#fb3e7a" />
         <Area type="monotone" dataKey="Returning"  stroke="#0f8874" fill="#0f8874" />
       </AreaChart>

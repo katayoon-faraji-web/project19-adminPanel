@@ -6,7 +6,7 @@ import SplineAreaRecharts2 from '../splineAreaRecharts2/chart'
 import StackedAreaAchart from '../stackedAreaRecharts/chart'
 const RightSidebar = () =>{
     return(
-        <div className="w-[23%] h-[100vh] fixed px-4 top-0 right-0 border-l-4 border-black flex flex-wrap justify-start content-start bg-[#2f363e]">
+        <div className="w-[23%] h-[100vh] fixed px-4 top-0 right-0  flex flex-wrap justify-start content-start bg-[#24292d]">
             <Box_chart title={'total sale'} info={'$245.90'}>
                 <SplineAreaRecharts/>
             </Box_chart>

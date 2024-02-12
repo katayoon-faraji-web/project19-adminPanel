@@ -10,7 +10,12 @@ module.exports = {
     './src/**/*.{js,ts,jsx,tsx,mdx}',
   ],
   theme: {
-    extend: {},
+    extend: {
+      fontFamily: {
+        primary: "font1",
+        secondary: "font2",
+      },
+    },
   },
   plugins: [],
 }

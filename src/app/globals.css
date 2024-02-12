@@ -7,3 +7,11 @@
 /* #fe634e orange */
 /* #24292d darkbg */
 /* #2f363e lifgt bg */
+@font-face {
+  font-family: font1;
+  src: url("../../public/fonts/Poppins/Poppins-Medium.ttf") format("opentype");
+}
+@font-face {
+  font-family: font2;
+  src: url("../../public/fonts/Protest_Strike/ProtestStrike-Regular.ttf") format("opentype");
+}

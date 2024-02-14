@@ -45,12 +45,12 @@ const AreaChartMian = () => {
           top: 10,
           right: 20,
           left: -25,
-          bottom: 0,
+          bottom: 10,
         }}
       >
         <CartesianGrid   vertical={false}/>
-        <XAxis dataKey="day" fontSize={12}/>
-        <YAxis  fontSize={12}/>
+        <XAxis dataKey="day" fontSize={12} stroke='white'/>
+        <YAxis  fontSize={12} stroke='white'/>
         <Tooltip contentStyle={{fontSize:'12px'}}/>
         <Area type="monotone" dataKey="revenue" stroke="#0f8874" strokeWidth={7} fill="transparent" />
       </AreaChart>

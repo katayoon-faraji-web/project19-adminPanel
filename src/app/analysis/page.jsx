@@ -1,24 +1,15 @@
 'use client'
-import FirstLine from '../../components/firstline/box'
-import SecondLine from '../../components/secondline/box'
-import ThirdLine from '../../components/thirdline/box'
-import FourthLine from '../../components/fourthline/box'
-import FifthLine from '../../components/fifthline/box'
-import LastLine from '../../components/lastline/box'
-import useStore from '../../zustand/store';
+import useStore from '../../../zustand/store';
 import { useRef ,useEffect } from 'react'
+import FirstLine from '../../../components/firstline/box'
+import SecondLineAnalysis from '../../../components/secondlineAnalysis/box'
+import ThirdLineAnalysis from '../../../components/thirdlineAnalysis/box'
+import FourthLineAnalysis from '../../../components/fourthlineAnalysis/box'
 
-export default function Home() {
+export default function AnalysisPage() {
   let sidebar = useStore(state=>state.sidebar)
   const sidebarWidth = useStore(state=>state.sidebarWidth)
   const mainPage =useRef()
-  // window.addEventListener('resize',()=>{
-  //   let w = window.innerWidth;
-  //   console.log(w);
-  //   if(w<=1024){
-  //     set_width(90)
-  //   }
-  // })
   let w =0
   useEffect(()=>{
     w = window.innerWidth;
@@ -74,16 +65,11 @@ export default function Home() {
   })
 
   return (
-    <main ref={mainPage} className="bg-[#2f363e] w-[62%] flex flex-wrap justify-start content-start relative left-[70px] p-4 h-fit transition-all duration-500">
-      <div className=' w-full h-full relative top-0 transition-all duration-500 flex flex-wrap justify-center content-start'>
+    <main ref={mainPage} className="bg-[#2f363e] w-[62%] h-[100vh] flex flex-wrap justify-start content-start relative left-[70px] p-4 transition-all duration-500">
         <FirstLine/>
-        <SecondLine/>
-        <ThirdLine/>
-        <FourthLine/>
-        <FifthLine/>
-        <LastLine/>
-        
-      </div>
+        <SecondLineAnalysis/>
+        <ThirdLineAnalysis/>
+        <FourthLineAnalysis/>
     </main>
   );
 }

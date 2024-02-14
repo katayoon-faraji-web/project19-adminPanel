@@ -10,11 +10,11 @@ registerLicense('Ngo9BigBOggjHTQxAR8/V1NAaF1cXmhLYVJxWmFZfVpgdV9EYFZVQGYuP1ZhSXx
 
 export default function App() {
     return(
-            <MapsComponent background='#24292d ' mapsArea={{background:'#24292d '}}  zoomSettings={{ enable: true, enablePanning: true }} >
+            <MapsComponent className='cursor-pointer flex justify-center items-center rounded-lg' width='900px' height='100%'  background='#24292d '  mapsArea={{background:'#24292d '}}  zoomSettings={{ enable: true, enablePanning: true }} >
                 <Inject services={[Zoom ,Marker ,NavigationLine ,MapsTooltip ,Tooltip ]}  />
                 
-                    <LayersDirective >
-                        <LayerDirective shapeData={world_map} shapeSettings={{fill: '#E5E5E5'}} >
+                    <LayersDirective>
+                        <LayerDirective shapeData={world_map} shapeSettings={{fill: '#E5E5E5'}}  >
                         <NavigationLinesDirective>
                            
                             <NavigationLineDirective visible={true}

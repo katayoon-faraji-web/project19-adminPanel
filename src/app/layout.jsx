@@ -5,10 +5,10 @@ import RightSidebar from '../../components/rightSidebar/rightsidebar'
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className="bg-[#24292d] font-primary capitalize text-[#b5b5c3]">
+      <body className="bg-[#2f363e] font-primary flex justify-between capitalize text-[#b5b5c3]">
         <Sidebar/>
-        <RightSidebar/>
         {children}
+        <RightSidebar/>
         </body>
     </html>
   );

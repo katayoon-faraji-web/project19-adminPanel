@@ -10,6 +10,7 @@ export default Sidebar;
 // ************sidebar component from MUI*********
 
 import * as React from 'react';
+import Link from 'next/link';
 import ListSubheader from '@mui/material/ListSubheader';
 import List from '@mui/material/List';
 import ListItemButton from '@mui/material/ListItemButton';
@@ -25,42 +26,69 @@ import PeopleAltIcon from '@mui/icons-material/PeopleAlt';
 import ShoppingBasketIcon from '@mui/icons-material/ShoppingBasket';
 import NavigateNextIcon from '@mui/icons-material/NavigateNext';
 import ViewListIcon from '@mui/icons-material/ViewList';
+import ShowChartIcon from '@mui/icons-material/ShowChart';
 import Image from 'next/image';
-
+import useStore from '../../zustand/store';
+import { useRef } from 'react';
 function NestedList() {
-  const [open1, setOpen1] = React.useState(true);
-  const [open2, setOpen2] = React.useState(true);
-  const [open3, setOpen3] = React.useState(true);
+  const [open1, setOpen1] = React.useState(false);
+  const [open2, setOpen2] = React.useState(false);
+  const [open3, setOpen3] = React.useState(false);
   const [menu, setMenu] = React.useState(260);
+  const sidebarHolder =useRef()
+    let sidebar = useStore(state=>state.dropdown)
+    const close_sidebar = useStore(state=>state.close_sidebar)
+    const open_sidebar = useStore(state=>state.open_sidebar)
+    const sidebarWidth = useStore(state=>state.sidebarWidth)
+    const setSideBarWidth = useStore(state=>state.setSideBarWidth)
+    
     function toggle_menu(){
-        if(menu==260){
-            setMenu(60)
+        if(sidebarWidth==220){
+            setSideBarWidth(50)
             setOpen1(false)
             setOpen2(false)
             setOpen3(false)
+            close_sidebar()
+            sidebarHolder.current.style.width = '50px'
+
         }else{
-            setMenu(260)
+          setSideBarWidth(220)
+          open_sidebar()
+          sidebarHolder.current.style.width = '220px'
         }
     }
 
+
   return (
-    <List className=' fixed top-0 left-0 bg-[#24292d]'
-      sx={{ width: '100%', maxWidth:menu , minHeight:900, bgcolor: '#2f363e', color: '#828690',overflow:'hidden',transition:'.4s' }}
+   <div ref={sidebarHolder} className='w-[50px] fixed top-0 left-0 h-[100vh] transition-all duration-500 bg-[#24292d] text-[#b5b5c3]'>
+      <List
+      sx={{ width: '100%',height:'100%',position:'absolute',color: '#b5b5c3',overflow:'hidden',transition:'.4s',padding:'0' }}
       component="nav"
       aria-labelledby="nested-list-subheader" 
       subheader={
-        <ListSubheader className='bg-transparent flex justify-start h-[100px] items-center' component="div" id="nested-list-subheader">
-          <ViewListIcon onClick={()=>{toggle_menu()}}  className='cursor-pointer text-[25px] text-[#b5b5c3] mr-4'/>
-          <Image width={80} height={40} alt='pic' src={'https://png.pngtree.com/png-vector/20220727/ourmid/pngtree-cooking-logo-png-image_6089722.png'}/>
+        <ListSubheader className='bg-[#2f363e] flex justify-start h-[80px] items-center' component="div" id="nested-list-subheader">
+          <ViewListIcon onClick={()=>{toggle_menu()}}  className='cursor-pointer text-[35px] text-[#b5b5c3] mr-4'/>
+          <Image  width={80} height={40} alt='pic' src={'https://cdn-icons-png.freepik.com/256/10952/10952201.png'}/>
         </ListSubheader>
       }
     >
-      <ListItemButton>
-        <ListItemIcon>
-          <HomeIcon className='text-[#b5b5c3]' />
-        </ListItemIcon>
-        <ListItemText primary="Dashboard" />
-      </ListItemButton>
+      <Link href={'/'}>
+        <ListItemButton>
+          <ListItemIcon>
+            <HomeIcon className='text-[#b5b5c3]' />
+          </ListItemIcon>
+          <ListItemText primary="Dashboard" />
+        </ListItemButton>
+      </Link>
+
+      <Link href={'/analysis'}>
+        <ListItemButton >
+          <ListItemIcon>
+            <ShowChartIcon  className='text-[#b5b5c3]'/>
+          </ListItemIcon>
+          <ListItemText primary="Analysis" />
+        </ListItemButton>
+      </Link>
   
       <ListItemButton onClick={()=>{setOpen1(!open1);setOpen2(false);setOpen3(false)}}>
         <ListItemIcon>
@@ -165,5 +193,6 @@ function NestedList() {
   
 
     </List>
+   </div>
   );
 }

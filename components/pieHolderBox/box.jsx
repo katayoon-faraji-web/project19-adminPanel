@@ -18,11 +18,11 @@ const HolderPieChart = ({logo,num1,title1,num2,title2,val1,val2,per,status}) =>{
         }
     }, [status])
     return(
-        <div className='w-[48%] h-[220px] p-4  rounded-md bg-[#24292d] flex flex-wrap justify-between items-center content-center'>
-           <div className='w-full h-[50%]  flex flex-wrap justify-start content-center '>
-                <div className='w-[60%]  h-full flex flex-wrap justify-start content-center'>
+        <div className='w-full lg:w-[48%] h-[220px] p-4 mt-2 lg:mt-0 rounded-md bg-[#24292d] flex flex-wrap justify-between items-center content-center'>
+           <div className='w-full h-[50%] flex flex-wrap justify-start content-center '>
+                <div className='w-[60%] h-full flex flex-wrap justify-start content-center'>
                     <span className='flex w-full text-[25px]'>{num1}</span>
-                    <span className='flex w-full '>{title1}</span>
+                    <span className='flex w-full text-[15px]'>{title1}</span>
                     <div className='w-full flex justify-start items-center'>
                         <span ref={up} className='w-[25px] h-[25px] flex text-[#b5b5c3] bg-[#0f8874] text-[10px] justify-center items-center rounded-full'><NorthIcon/></span>
                         <span ref={down} className='w-[25px] h-[25px] flex text-[#b5b5c3] bg-[#fb3e7a] text-[10px] justify-center items-center rounded-full'><SouthIcon/></span>

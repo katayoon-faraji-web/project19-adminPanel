@@ -6,6 +6,7 @@ const nextConfig = {
             "png.pngtree.com",
             "riday-admin-template.multipurposethemes.com",
             "image.similarpng.com",
+            "cdn-icons-png.freepik.com"
         ],
       },
 };

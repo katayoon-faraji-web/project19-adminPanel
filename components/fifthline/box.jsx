@@ -84,13 +84,13 @@ export default  FifthLine;
 
 const Item = ({children,s,name,price,num,sales}) =>{
     return(
-        <div className="w-full px-6 h-[100px] flex justify-between cursor-pointer items-center content-center border-b border-[#b5b5c3] transition-all duration-500 hover:bg-[#b5b5c3] hover:text-[#24292d]">
+        <div className="w-full px-1 lg:px-6 h-[100px] flex justify-between cursor-pointer items-center content-center border-b border-[#b5b5c3] transition-all duration-500 hover:bg-[#b5b5c3] hover:text-[#24292d]">
            <div className="w-[60%] h-full flex justify-start items-center">
-                <div className="w-[20%] h-full flex items-center justify-start">
+                <div className="w-[60px] lg:w-[100px] h-full flex items-center justify-start">
                     <Image className="rounded-lg" width={150} height={150} alt="pic" src={s}/>
                 </div>
-                <div className="w-[40%] h-full flex flex-wrap justify-start ml-4 content-center">
-                    <span className="flex w-full text-[18px]">{name}</span>
+                <div className="w-[45%] lg:w-[40%] h-full flex flex-wrap justify-start ml-4 content-center">
+                    <span className="flex w-full text-[12px] lg:text-[18px]">{name}</span>
                     <span className="flex w-full text-[12px]">{price}</span>
                 </div>
            </div>

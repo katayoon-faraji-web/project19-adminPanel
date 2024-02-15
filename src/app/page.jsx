@@ -11,17 +11,11 @@ import { useRef ,useEffect } from 'react'
 export default function Home() {
   let sidebar = useStore(state=>state.sidebar)
   const sidebarWidth = useStore(state=>state.sidebarWidth)
-  const mainPage =useRef()
-  // window.addEventListener('resize',()=>{
-  //   let w = window.innerWidth;
-  //   console.log(w);
-  //   if(w<=1024){
-  //     set_width(90)
-  //   }
-  // })
+  const mainPage = useRef()
   let w =0
   useEffect(()=>{
-    w = window.innerWidth;
+    if(typeof window !== 'undefined'){
+      w = window.innerWidth;
       if(sidebarWidth=='220'){
         w = window.innerWidth;
         if(w<1190){
@@ -44,9 +38,10 @@ export default function Home() {
         
         mainPage.current.style.left = '70px'
       }
-
+    }
   },[sidebarWidth])
-  window.addEventListener('resize',()=>{
+  if(typeof window !== 'undefined'){
+    window.addEventListener('resize',()=>{
       w = window.innerWidth;
       if(sidebarWidth=='220'){
         w = window.innerWidth;
@@ -72,6 +67,9 @@ export default function Home() {
       }
 
   })
+
+  }
+  
 
   return (
     <main ref={mainPage} className="bg-[#2f363e] w-[62%] flex flex-wrap justify-start content-start relative left-[70px] p-4 h-fit transition-all duration-500">

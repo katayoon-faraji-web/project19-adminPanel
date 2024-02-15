@@ -14,7 +14,7 @@ export default ThirdLineAnalysis;
 const HolderChart = ({t1,t2,t3,t4}) =>{
     return(
         <div className='w-full lg:w-[48%] h-[200px] flex justify-center items-center content-center '>
-            <div className='w-[60px] h-[60px] rounded-full bg-white mr-2  flex items-center justify-center '><EmojiEventsIcon className='flex w-[70px] h-[70px]  text-[#0f8874]'/></div>
+            <div className='w-[60px] h-[60px] rounded-full bg-white mr-2  flex items-center justify-center '><EmojiEventsIcon className='flex w-[30px] h-[30px]  text-[#0f8874]'/></div>
             <div className='w-[100px] h-[90%]  flex flex-wrap justify-start content-center mx-2'>
                 <div className='w-full h-[50%] flex flex-wrap justify-start content-start '>
                     <span className='w-full flex justify-start text-[20px] text-white'>{t1}</span>

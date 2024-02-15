@@ -5,18 +5,24 @@ const useStore = create((set,get) => ({
     sidebar:'closed',
     sidebarWidth:50,
     width:'58',
-    // user:'Account',
+    user:'Admin',
+    login_status:'no',
+    set_login_status:(s)=>{
+      set(state=>({
+        login_status:state.login_status=s
+      }))
+    },
     
-    // log_in_to_user:(name)=>{
-    //     set(state=>({
-    //         user:state.user=name
-    //     }))
-    // },
-    // log_out_from_user:()=>{
-    //     set(state=>({
-    //         user:state.user='Account'
-    //     }))
-    // },
+    log_in_to_user:(name)=>{
+        set(state=>({
+            user:state.user=name
+        }))
+    },
+    log_out_from_user:()=>{
+        set(state=>({
+            user:state.user='Account'
+        }))
+    },
     setSideBarWidth:(y)=>set({sidebarWidth:y}),
     set_width:(x)=>{
       set(state=>({

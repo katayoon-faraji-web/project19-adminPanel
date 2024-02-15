@@ -71,7 +71,7 @@ export default function AnalysisPage() {
   
 
   return (
-    <main ref={AnalysisPage} className="bg-[#2f363e] w-[62%] h-[100vh] flex flex-wrap justify-start content-start relative left-[70px] p-4 transition-all duration-500">
+    <main ref={AnalysisPage} className="bg-[#2f363e] w-[62%] h-fit flex flex-wrap justify-start content-start relative left-[70px] p-4 transition-all duration-500 ">
         <FirstLine/>
         <SecondLineAnalysis/>
         <ThirdLineAnalysis/>

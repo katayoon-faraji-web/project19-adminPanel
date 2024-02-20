@@ -25,14 +25,14 @@ export default function Home() {
       fetching(data);
     }
   }, [data]);
-  // useEffect(()=>{
-  //   if(login_status=='no'){
-  //     router.replace('/login')
-  //     set_login_status('yes')
-  //   }else{
-  //     router.replace('/')
-  //   }}
-  // ,[])
+  useEffect(()=>{
+    if(login_status=='no'){
+      router.replace('/login')
+      set_login_status('yes')
+    }else{
+      router.replace('/')
+    }}
+  ,[])
   
   const mainPage = useRef()
   if(dataSource!='' ) {

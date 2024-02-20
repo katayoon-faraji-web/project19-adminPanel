@@ -25,7 +25,10 @@ export default function RootLayout({ children }) {
     }
   }, [data]);
   console.log(data);
-  let w = window.innerWidth
+  let w = 0 
+  if(typeof window !== 'undefined'){
+    w = window.innerWidth
+  }
   if(typeof window !== 'undefined'){
     w = window.innerWidth;
     if(w<768){

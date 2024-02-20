@@ -65,8 +65,8 @@ const LogIn = () =>{
         
     }
     return(
-        <section className="w-full h-[100vh] relative flex justify-center items-center bg-[#24292d]">
-            <div className="w-[70%] lg:w-[30%] h-[500px] flex flex-wrap justify-center content-center font-primary relative z-30">
+        <section className="w-full h-[100vh] relative flex justify-center items-center  ">
+            <div className="w-[70%] lg:w-[45%] h-[500px] flex flex-wrap justify-center  content-center font-primary relative z-30 lg:ml-56">
                 <div ref={alert} className="w-full mb-4 hidden">
                     <BasicAlerts />
                 </div>
@@ -79,12 +79,12 @@ const LogIn = () =>{
                 
 
                 <Tooltip title="Admin"  placement="top-end" >
-                    <input ref={inp1} type="text" placeholder="Username" required spellCheck={false} className="w-full h-[50px] rounded-md border-[#b5b5c3] text-[20px] placeholder:text-[20px] placeholder:text-[#b5b5c3] bg-[#2f363e] text-[#24292d] p-4"/>
+                    <input ref={inp1} type="text" placeholder="Username" required spellCheck={false} className="w-full h-[50px] rounded-md border-[#b5b5c3] text-[20px] placeholder:text-[15px] placeholder:text-[#636a73] bg-[#b5b5c3] text-[#24292d] p-4"/>
                 </Tooltip>
 
 
                 <Tooltip title="Admin"  placement="top-end">
-                    <input ref={inp2} type="password" placeholder="Password"required spellCheck={false} className="w-full h-[50px] rounded-md border-[#b5b5c3] text-[20px] placeholder:text-[20px] my-4 placeholder:text-[#b5b5c3] bg-[#2f363e] text-[#24292d] p-4" />
+                    <input ref={inp2} type="password" placeholder="Password"required spellCheck={false} className="w-full h-[50px] rounded-md border-[#b5b5c3] text-[20px] placeholder:text-[15px] my-4 placeholder:text-[#636a73] bg-[#b5b5c3] text-[#24292d] p-4" />
                 </Tooltip>
 
                 

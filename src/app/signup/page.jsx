@@ -101,8 +101,8 @@ const SignUp = () =>{
         });
         
     return(
-        <section className="w-full h-[100vh] relative flex justify-center items-center bg-[#24292d] font-primary">
-            <div className="w-[70%] lg:w-[30%] h-[500px] flex flex-wrap justify-center content-center font-primary relative z-30">
+        <section className="w-full h-[100vh] relative flex justify-center items-center  font-primary">
+            <div className="w-[70%] lg:w-[40%] h-[500px] flex flex-wrap justify-center content-center font-primary relative z-30 lg:ml-56">
                 <form onSubmit={formik.handleSubmit}>
                     <div ref={error} className="w-full hidden mb-4">
                        < BasicAlerts/>
@@ -114,7 +114,7 @@ const SignUp = () =>{
                     ref={inp1}
                     name="username"
                     type="text"
-                    placeholder="Username" className="w-full h-[50px] rounded-md border-[#b5b5c3] text-[20px] placeholder:text-[20px] placeholder:text-[#b5b5c3] bg-#2f363e text-[#24292d] p-4"
+                    placeholder="Username" className="w-full h-[50px] rounded-md border-[#b5b5c3] text-[20px] placeholder:text-[#636a73] placeholder:text-[15px] bg-[#b5b5c3] text-[#24292d] p-4"
                     onChange={formik.handleChange}
                     value={formik.values.username}
                     />
@@ -124,7 +124,7 @@ const SignUp = () =>{
                     ref={inp2}
                     name="email"
                     type="email"
-                    placeholder="email"  spellCheck={false} className="w-full h-[50px] rounded-md border-[#b5b5c3] text-[20px] placeholder:text-[20px] placeholder:text-[#b5b5c3] bg-#2f363e text-[#24292d] p-4 my-4"
+                    placeholder="email"  spellCheck={false} className="w-full h-[50px] rounded-md border-[#b5b5c3] text-[20px] placeholder:text-[15px] placeholder:text-[#636a73] bg-[#b5b5c3] text-[#24292d] p-4 mt-4"
                     onChange={formik.handleChange}
                     value={formik.values.email}
                     />
@@ -134,13 +134,13 @@ const SignUp = () =>{
                     ref={inp3}
                     name="password"
                     type="password"
-                    placeholder="password"  spellCheck={false} className="w-full h-[50px] rounded-md border-[#b5b5c3] text-[20px] placeholder:text-[20px] placeholder:text-[#b5b5c3] bg-#2f363e text-[#24292d] p-4"
+                    placeholder="password"  spellCheck={false} className="w-full h-[50px] rounded-md border-[#b5b5c3] text-[20px] placeholder:text-[15px] placeholder:text-[#636a73] bg-[#b5b5c3] text-[#24292d] p-4 mt-4"
                     onChange={formik.handleChange}
                     value={formik.values.password}
                     />
                     {formik.errors.password ? <div>{formik.errors.password}</div> : null}
             
-                    <button type="submit" className="w-full mt-4 h-[40px] bg-[#0f8874] text-[#b5b5c3] text-[20px] rounded-md cursor-pointer transition-all duration-500 hover:bg-[#2f363e] hover:text-[#0f5643] hover:border-2 hover:border-[#0e5540]">Sign up</button>
+                    <button type="submit" className="w-full mt-4 h-[40px] bg-[#0f8874] text-[#b5b5c3] text-[20px] rounded-md cursor-pointer transition-all duration-500 hover:bg-[#b5b5c3] hover:text-[#0f5643] hover:border-2 hover:border-[#0e5540]">Sign up</button>
                 </form>
                 <span className="mt-4">have an account? <Link href={'/login'} className="text-[#0f8874] underline">Log in</Link></span>
               

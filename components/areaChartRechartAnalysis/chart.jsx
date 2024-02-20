@@ -1,43 +1,50 @@
 'use client'
 import React from 'react';
+import useStore from '../../zustand/store'
 import { AreaChart, Area, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer } from 'recharts';
+import { stringToNumber } from '@syncfusion/ej2-react-maps';
 
-const data = [
+
+
+const AreaChartAnalysis = () => {
+  const dataSource = useStore(state=>state.dataSource)
+  let d = dataSource[0].chart2analysis
+  let arrscale = d.arrscale
+
+  const data = [
     {
         day: 'Mon',
-        sales:31,
+        sales:stringToNumber(arrscale[0]),
         
       },
       {
         day: 'Tue',
-        sales:40,
+        sales:stringToNumber(arrscale[1]),
         
       },
       {
         day: 'Wed',
-        sales:28,
+        sales:stringToNumber(arrscale[2]),
         
       },
       {
         day: 'Thu',
-        sales:51,
+        sales:stringToNumber(arrscale[3]),
         
       },
       {
         day: 'Fri',
-        sales:42,
+        sales:stringToNumber(arrscale[4]),
         
       },
       {
         day: 'Sat',
-        sales:109,
+        sales:stringToNumber(arrscale[5]),
       },
       {
         day: 'Sun',
-        sales:100,},
+        sales:stringToNumber(arrscale[6]),},
 ];
-
-const AreaChartAnalysis = () => {
   return (
     <ResponsiveContainer width="100%" height="80%">
       <AreaChart

@@ -1,11 +1,17 @@
+'use client'
 import BarChartAnalysisGreen from '../greenChartAnalysis/chart'
 import EmojiEventsIcon from '@mui/icons-material/EmojiEvents';
 import ArrowDropDownIcon from '@mui/icons-material/ArrowDropDown';
+import useStore from '../../zustand/store';
+
 const ThirdLineAnalysis = () =>{
+    let dataSource = useStore(state=>state.dataSource)
+    let d1 = dataSource[0].chart1greeninfo
+    let d2 = dataSource[0].chart2greeninfo
     return(
         <div className="w-full p-4 lg:p-8 h-fit flex flex-wrap justify-center items-center bg-[#0f8874] rounded-lg mt-6">
-            <HolderChart t1={'34040'} t2={'Revenue'} t3={'+34040'} t4={'0.036%'}/>
-            <HolderChart t1={'$967K'} t2={'Sales'} t3={'-6.20967'} t4={'2.036%'}/>
+            <HolderChart t1={d1.num1} t2={'Revenue'} t3={d1.num2} t4={d1.num3}/>
+            <HolderChart t1={d2.num1} t2={'Sales'} t3={d2.num2} t4={d2.num3}/>
         </div>
     )
 }

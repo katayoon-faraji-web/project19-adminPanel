@@ -1,8 +1,26 @@
 'use client'
 import Image from "next/image";
-import { useState } from "react";
+import { useState ,useEffect } from "react";
 import LineChartSmall from '../lineChartRechart/chart'
+import useStore from '../../zustand/store';
+
 const FifthLine = () =>{
+    let dataSource = useStore(state=>state.dataSource)
+    let d = []
+    const [data,dataSet] = useState([])
+    useEffect(()=>{
+      d = dataSource[0].trendedfoods
+      const arr = [
+        {s:'https://riday-admin-template.multipurposethemes.com/bs5/images/food/biryanis.jpg',name:d[0].name,price:d[0].price,num:d[0].num1,sales:d[0].num2,status:'plus'},
+        {s:'https://riday-admin-template.multipurposethemes.com/bs5/images/food/burgers.jpg',name:d[1].name,price:d[1].price,num:d[1].num1,sales:d[1].num2,status:'neg'},
+        {s:'https://riday-admin-template.multipurposethemes.com/bs5/images/food/dals.jpg',name:d[2].name,price:d[2].price,num:d[2].num1,sales:d[2].num2,status:'plus'},
+        {s:'https://riday-admin-template.multipurposethemes.com/bs5/images/food/noodles.jpg',name:d[3].name,price:d[3].price,num:d[3].num1,sales:d[3].num2,status:'neg'},
+        {s:'https://riday-admin-template.multipurposethemes.com/bs5/images/food/main.jpg',name:d[4].name,price:d[4].price,num:d[4].num1,sales:d[4].num2,status:'plus'}
+    ]
+        dataSet(arr)
+      
+    },[])
+
     const data1 = [
         {
           name: 'Mon',
@@ -48,13 +66,8 @@ const FifthLine = () =>{
           
             },
       ]
-    const [data,dataSet] = useState([
-        {s:'https://riday-admin-template.multipurposethemes.com/bs5/images/food/biryanis.jpg',name:'Biryanis Pulav',price:'$12.00 Main Course',num:'158',sales:'sales(20%)',status:'plus'},
-        {s:'https://riday-admin-template.multipurposethemes.com/bs5/images/food/burgers.jpg',name:'Burgers',price:'$42.00 Snakes',num:'18',sales:'sales(-0.5%)',status:'neg'},
-        {s:'https://riday-admin-template.multipurposethemes.com/bs5/images/food/dals.jpg',name:'Dal Palak Recipe',price:'$60.00 Main Course',num:'258',sales:'sales(15%)',status:'plus'},
-        {s:'https://riday-admin-template.multipurposethemes.com/bs5/images/food/noodles.jpg',name:'Pan Noodles',price:'$112.00 Staters',num:'58',sales:'sales(-10%)',status:'neg'},
-        {s:'https://riday-admin-template.multipurposethemes.com/bs5/images/food/main.jpg',name:'Vegetable Jalfrezi',price:'$120.00 Main Course',num:'215',sales:'sales(21%)',status:'plus'}
-    ])
+   
+    
     return(
         <div className="w-full h-fit flex flex-wrap justify-center content-start p-4 bg-[#24292d] rounded-lg">
             {data && data.map((val)=>{
@@ -95,7 +108,7 @@ const Item = ({children,s,name,price,num,sales}) =>{
                 </div>
            </div>
             <div className="w-[35%] h-full flex justify-end items-center content-center">
-                <div className="w-[65px] h-full ">{children}</div>
+                <div className="w-[100px] lg:w-[80px] h-full ">{children}</div>
                 <div className="w-[100px] h-full ml-2 flex flex-wrap justify-end content-center">
                     <span className="w-full flex text-[18px] justify-end">{num}</span>
                     <span className="w-full flex text-[12px] justify-end">{sales}</span>

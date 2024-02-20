@@ -1,59 +1,66 @@
 'use client'
 import React from 'react';
+import useStore from '../../zustand/store';
 import { BarChart, Bar, Rectangle,Legend, XAxis, YAxis, CartesianGrid, Tooltip,  ResponsiveContainer } from 'recharts';
+import { stringToNumber } from '@syncfusion/ej2-react-maps';
 
-const data = [
+
+
+const BarChartAnalysis = () => {
+  const dataSource = useStore(state=>state.dataSource)
+  let d = dataSource[0].chart1analysis
+  let arr2018 = d.arr2018
+  let arr2019 = d.arr2019
+  const data = [
     {
       month: 'Jan',
-      year2018:50,
-      year2019:80,
+      year2018:stringToNumber(arr2018[0]),
+      year2019:stringToNumber(arr2019[0]),
     },
     {
       month: 'Feb',
-      year2018:70,
-      year2019:95,
+      year2018:stringToNumber(arr2018[1]),
+      year2019:stringToNumber(arr2019[1]),
     },
     {
       month: 'Mar',
-      year2018:130,
-      year2019:150,
+      year2018:stringToNumber(arr2018[2]),
+      year2019:stringToNumber(arr2019[2]),
     },
     {
       month: 'Apr',
-      year2018:180,
-      year2019:210,
+      year2018:stringToNumber(arr2018[3]),
+      year2019:stringToNumber(arr2019[3]),
     },
     {
       month: 'May',
-      year2018:90,
-      year2019:140,
+      year2018:stringToNumber(arr2018[4]),
+      year2019:stringToNumber(arr2019[4]),
     },
     {
       month: 'Jun',
-      year2018:180,
-      year2019:230,
+      year2018:stringToNumber(arr2018[5]),
+      year2019:stringToNumber(arr2019[5]),
     },
     {
       month: 'Jul',
-      year2018:270,
-      year2019:300,
+      year2018:stringToNumber(arr2018[6]),
+      year2019:stringToNumber(arr2019[6]),
     
     },
     {
       month: 'Aug',
-      year2018:220,
-      year2019:280,
+      year2018:stringToNumber(arr2018[7]),
+      year2019:stringToNumber(arr2019[7]),
     
     },
     {
       month: 'Sep',
-      year2018:110,
-      year2019:130,
+      year2018:stringToNumber(arr2018[8]),
+      year2019:stringToNumber(arr2019[8]),
     
     },
 ];
-
-const BarChartAnalysis = () => {
   return (
     <ResponsiveContainer  width="100%" height="60%" >
       <BarChart

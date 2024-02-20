@@ -1,18 +1,25 @@
+'use client'
 import React from 'react';
 import { AreaChart, Area, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer } from 'recharts';
-
-const data = [
-  { name: '1',session:14},
-  { name: '2',session:16},
-  { name: '3',session:27},
-  { name: '4',session:32},
-  { name: '5',session:34},
-  { name: '6',session:35},
-  { name: '7',session:20},
-  { name: '8',session:27},
-];
+import useStore from '../../zustand/store';
+import { useEffect } from 'react';
+import { stringToNumber } from '@syncfusion/ej2-react-maps';
 
 const SplineArea = () => {
+  let dataSource = useStore(state=>state.dataSource)
+  let d = dataSource[0].sidebarchart2
+  let arr = d.arr
+
+  const data = [
+    { name: '1',session:stringToNumber(arr[0])},
+    { name: '2',session:stringToNumber(arr[1])},
+    { name: '3',session:stringToNumber(arr[2])},
+    { name: '4',session:stringToNumber(arr[3])},
+    { name: '5',session:stringToNumber(arr[4])},
+    { name: '6',session:stringToNumber(arr[5])},
+    { name: '7',session:stringToNumber(arr[6])},
+    { name: '8',session:stringToNumber(arr[7])},
+  ];
   return (
     <ResponsiveContainer width="100%" height="60%">
       <AreaChart  width={400} height={60} data={data} margin={{ top: 5, right: 0, left: 0, bottom: 5 }}>

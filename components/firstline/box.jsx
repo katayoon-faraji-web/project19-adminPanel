@@ -10,7 +10,7 @@ import Badge from '@mui/material/Badge';
 const FirstLine = () =>{
   const user = useStore(state=>state.user)
     return(
-        <div className="w-full h-[70px] rounded-lg flex justify-between items-center">
+        <div className="w-full h-[70px] rounded-lg flex justify-between items-center mt-10">
              <div className='w-[48%] h-full hidden lg:flex justify-start items-center'>
                 <input type="search" placeholder='search...' spellCheck={false} className='w-full h-[40px] p-4 bg-[#24292d] text-[15px] rounded-lg text-[#b5b5c3] placeholder:text-[#b5b5c3] placeholder:text-[15px]'/>
             </div>
@@ -24,7 +24,6 @@ const FirstLine = () =>{
             <div className='w-[25%] h-full flex justify-end items-center p-4'>
                 <span className='flex text-[15px] mr-2'>Hello,{user} </span>
                 <div className='relative'><BackgroundLetterAvatars UN={user}/><div className="absolute -top-[30%] -right-[5%] w-full h-[100px]"><CustomizedSelects/></div></div>
-
             </div>
         </div>
     )

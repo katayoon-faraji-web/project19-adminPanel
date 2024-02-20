@@ -1,5 +1,4 @@
 'use client'
-
 const Sidebar = () =>{
     return(
         <NestedList/>
@@ -8,7 +7,6 @@ const Sidebar = () =>{
 export default Sidebar;
 
 // ************sidebar component from MUI*********
-
 import * as React from 'react';
 import Link from 'next/link';
 import ListSubheader from '@mui/material/ListSubheader';
@@ -40,19 +38,18 @@ function NestedList() {
     const close_sidebar = useStore(state=>state.close_sidebar)
     const open_sidebar = useStore(state=>state.open_sidebar)
     const sidebarWidth = useStore(state=>state.sidebarWidth)
+    const width = useStore(state=>state.width)
     const setSideBarWidth = useStore(state=>state.setSideBarWidth)
     
     function toggle_menu(){
-        if(sidebarWidth==220){
-            setSideBarWidth(50)
-            setOpen1(false)
-            setOpen2(false)
-            setOpen3(false)
-            close_sidebar()
-            sidebarHolder.current.style.width = '50px'
+        if(sidebarWidth=='220px'){
+          setOpen1(false)
+          setOpen2(false)
+          setOpen3(false)
+          close_sidebar()
+          sidebarHolder.current.style.width = '50px'
 
         }else{
-          setSideBarWidth(220)
           open_sidebar()
           sidebarHolder.current.style.width = '220px'
         }
@@ -60,7 +57,7 @@ function NestedList() {
 
 
   return (
-   <div ref={sidebarHolder} className='w-[50px] fixed top-0 left-0 h-[100vh] transition-all duration-500 bg-[#24292d] text-[#b5b5c3]'>
+   <div ref={sidebarHolder} className='w-[50px] fixed top-0 left-0 h-[100vh] transition-all duration-500 z-50 bg-[#24292d] text-[#b5b5c3] pt-10'>
       <List
       sx={{ width: '100%',height:'100%',position:'absolute',color: '#b5b5c3',overflow:'hidden',transition:'.4s',padding:'0' }}
       component="nav"

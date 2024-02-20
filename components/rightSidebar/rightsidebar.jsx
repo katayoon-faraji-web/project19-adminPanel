@@ -1,38 +1,48 @@
 'use client'
-// import SplineArea from '../../components/splineArea/chart'
-// import SplineAreaMUI from '../../components/splineAreaMUI/chart'
 import SplineAreaRecharts from '../splineAreaRecharts1/chart'
 import SplineAreaRecharts2 from '../splineAreaRecharts2/chart'
 import StackedAreaAchart from '../stackedAreaRecharts/chart'
+import useStore from '../../zustand/store';
+import { useEffect } from 'react';
+
 const RightSidebar = () =>{
+    
+    let dataSource = useStore(state=>state.dataSource)
+    console.log(dataSource);
+    let d1 = dataSource[0].sidebarchart1
+    let d2 = dataSource[0].sidebarchart2
+    let d3 = dataSource[0].sidebarchart3
+ 
+   
     return(
-        <div className="w-[350px] h-[100vh] overflow-y-scroll fixed px-4 top-0 right-0 hidden xl:flex flex-wrap justify-start content-start bg-[#24292d]">
-      
-           <div className='w-full h-[190vh]'>
-                <Box_chart>
-                    <ChartSec title={'total sale'} info={'$245.90'}>
-                        <SplineAreaRecharts/>
-                    </ChartSec>
-                    <InfoSec1/>
-                </Box_chart>
-                <Box_chart>
-                    <ChartSec title={'total session'} info={'845'}>
-                        <SplineAreaRecharts2/>
-                    </ChartSec>
-                    <InfoSec2/>
-                </Box_chart>
-                <Box_chart>
-                    <ChartSec title={'Customer rate'} info={'5.12%'}>
-                        <StackedAreaAchart/>
-                    </ChartSec>
-                    <InfoSec3/>
-                </Box_chart>
-                <RecentActivities/>
-           </div>
+        <div className="w-[350px] h-[100vh] overflow-y-scroll fixed px-4 top-0 right-0 hidden xl:flex flex-wrap justify-start content-start bg-[#24292d] pt-10">
+        <div className='w-full h-[190vh]'>
+            <Box_chart>
+                <ChartSec title={'total sale'} info={d1.totalsales}>
+                    <SplineAreaRecharts/>
+                </ChartSec>
+                <InfoSec1/>
+            </Box_chart>
+            <Box_chart>
+                <ChartSec title={'total session'} info={d2.totalsession}>
+                    <SplineAreaRecharts2/>
+                </ChartSec>
+                <InfoSec2/>
+            </Box_chart>
+            <Box_chart>
+                <ChartSec title={'Customer rate'} info={d3.customerrate}>
+                    <StackedAreaAchart/>
+                </ChartSec>
+                <InfoSec3/>
+            </Box_chart>
+            <RecentActivities/>
+        </div>
                 
         </div>
     )
-}
+    }
+    
+
 export default  RightSidebar;
 
 
@@ -75,21 +85,30 @@ const InfoSec2 = () =>{
 const InfoSec3 = () =>{
     return(
         <ul className='w-full h-[25%] flex justify-start items-center'>
-            <li className='w-[100px] h-full flex justify-start items-center mx-2 '><span className='flex w-[10px] mr-1 h-[10px] rounded-full bg-[#fb3e7a]'></span>First Time</li>
-            <li className='w-[100px] h-full flex justify-start items-center mx-2 '><span className='flex w-[10px] mr-1 h-[10px] rounded-full bg-[#0f8874]'></span>Returning</li>
+            <li className='w-[100px] h-full flex justify-start items-center mx-2 '><span className='flex w-[10px] mr-1 h-[10px] rounded-full bg-[#fb3e7a] text-[12px]'></span>First Time</li>
+            <li className='w-[100px] h-full flex justify-start items-center mx-2 '><span className='flex w-[10px] mr-1 h-[10px] rounded-full bg-[#0f8874] text-[12px]'></span>Returning</li>
         </ul>
     )
 }
 const RecentActivities = () =>{
+    let dataSource = useStore(state=>state.dataSource)
+    let d = dataSource[0].recentactivities
+    let d1=d[0]
+    let d2=d[1]
+    let d3=d[2]
+    let d4=d[3]
+    let d5=d[4]
+
     return(
         <div className="w-full h-[600px] flex flex-wrap justify-start mt-4 content-center border border-white rounded-lg py-2">
-            <Activity time={'10:10'} desc={'morbi quis ex eu arco auctor sagittis.by johne'}/>
-            <Activity time={'08:40'} desc={'morbi quis ex eu arco auctor sagittis.by Amla'}/>
-            <Activity time={'07:10'} desc={'morbi quis ex eu arco auctor sagittis.by josef'}/>
-            <Activity time={'01:15'} desc={'morbi quis ex eu arco auctor sagittis.by rima'}/>
-            <Activity time={'23:12'} desc={'morbi quis ex eu arco auctor sagittis.by alaxa'}/>
+            <Activity time={d1.date} desc={d1.des}/>
+            <Activity time={d2.date} desc={d2.des}/>
+            <Activity time={d3.date} desc={d3.des}/>
+            <Activity time={d4.date} desc={d4.des}/>
+            <Activity time={d5.date} desc={d5.des}/>
         </div>
     )
+
 }
 const Activity = ({time,desc}) =>{
     return(

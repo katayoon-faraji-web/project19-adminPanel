@@ -1,45 +1,55 @@
+'use client'
 import React from 'react';
 import { AreaChart, Area, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer } from 'recharts';
-
-const data = [
-  {
-    day:'Mon',
-    fisrtTime: 11,
-    Returning: 31,
-  },
-  {
-    day:'Tue',
-    fisrtTime: 32,
-    Returning: 40,
-  },
-  {
-    day:'Wed',
-    fisrtTime: 45,
-    Returning: 28,
-  },
-  {
-    day:'Thu',
-    fisrtTime: 32,
-    Returning: 51,
-  },
-  {
-    day:'Fri',
-    fisrtTime: 34,
-    Returning: 42,
-  },
-  {
-    day:'Sat',
-    fisrtTime: 52,
-    Returning: 109,
-  },
-  {
-    day:'FSunri',
-    fisrtTime: 41,
-    Returning: 100,
-  },
-];
+import useStore from '../../zustand/store';
+import { useEffect } from 'react';
+import { stringToNumber } from '@syncfusion/ej2-react-maps';
 
 const StackedAreaAchart = () => {
+
+  let dataSource = useStore(state=>state.dataSource)
+  let d = dataSource[0].sidebarchart3
+  let arrfirst = d.arrfirst
+  let arrreturning = d.arrreturning
+
+  const data = [
+    {
+      day:'Mon',
+      fisrtTime: stringToNumber(arrfirst[0]),
+      Returning: stringToNumber(arrreturning[0]),
+    },
+    {
+      day:'Tue',
+      fisrtTime: stringToNumber(arrfirst[1]),
+      Returning: stringToNumber(arrreturning[1]),
+    },
+    {
+      day:'Wed',
+      fisrtTime: stringToNumber(arrfirst[2]),
+      Returning: stringToNumber(arrreturning[2]),
+    },
+    {
+      day:'Thu',
+      fisrtTime: stringToNumber(arrfirst[3]),
+      Returning: stringToNumber(arrreturning[3]),
+    },
+    {
+      day:'Fri',
+      fisrtTime: stringToNumber(arrfirst[4]),
+      Returning: stringToNumber(arrreturning[4]),
+    },
+    {
+      day:'Sat',
+      fisrtTime: stringToNumber(arrfirst[5]),
+      Returning: stringToNumber(arrreturning[5]),
+    },
+    {
+      day:'FSunri',
+      fisrtTime: stringToNumber(arrfirst[6]),
+      Returning: stringToNumber(arrreturning[6]),
+    },
+  ];
+  
   return (
     <ResponsiveContainer width="100%" height="80%">
       <AreaChart

@@ -2,14 +2,15 @@
 import Image from 'next/image';
 import { Swiper, SwiperSlide,Navigation,Pagination ,Scrollbar,A11y} from 'swiper/react';
 import '../../node_modules/swiper/swiper.css';
+import useStore from '../../zustand/store';
 
  const Carousel = () => {
+  const sliderItems = useStore(state=>state.sliderItems)
   return (
     <Swiper 
-
-        scrollbar={{ draggable: true }}
-      spaceBetween={250}
-      slidesPerView={3}
+      scrollbar={{ draggable: true }}
+      spaceBetween={70}
+      slidesPerView={sliderItems}
       onSlideChange={() => console.log('slide change')}
       onSwiper={(swiper) => console.log(swiper)}
     >

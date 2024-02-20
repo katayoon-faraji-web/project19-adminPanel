@@ -1,15 +1,32 @@
 import { create } from "zustand";
 
-
 const useStore = create((set,get) => ({
+    dataSource:[],
     sidebar:'closed',
-    sidebarWidth:50,
-    width:'58',
+    sidebarWidth:'50px',
+    width:'72%',
+    left:'70px',
     user:'Admin',
     login_status:'no',
+    sliderItems:'3',
+    set_sliderItems:(x)=>{
+      set(state=>({
+        sliderItems:state.sliderItems=x
+      }))
+    },
     set_login_status:(s)=>{
       set(state=>({
         login_status:state.login_status=s
+      }))
+    },
+    set_width:(x)=>{
+      set(state=>({
+        width:state.width=x
+      }))
+    },
+    set_left:(x)=>{
+      set(state=>({
+        left:state.left=x
       }))
     },
     
@@ -23,18 +40,19 @@ const useStore = create((set,get) => ({
             user:state.user='Account'
         }))
     },
-    setSideBarWidth:(y)=>set({sidebarWidth:y}),
-    set_width:(x)=>{
-      set(state=>({
-        width:state.width=x
-      }))
-    },
+
     open_sidebar:()=>{
       set(state=>({
         sidebar:state.sidebar='opened'
       }))
       set(state=>({
-        width:state.width='58'
+        sidebarWidth:state.sidebarWidth='220px'
+      }))
+      set(state=>({
+        width:state.width='62%'
+      }))
+      set(state=>({
+        left:state.left='220px'
       }))
     },
     close_sidebar:()=>{
@@ -42,56 +60,26 @@ const useStore = create((set,get) => ({
         sidebar:state.sidebar='closed'
       }))
       set(state=>({
-        width:state.width='72'
+        sidebarWidth:state.sidebarWidth='50px'
+      }))
+      set(state=>({
+        width:state.width='72%'
+      }))
+      set(state=>({
+        left:state.left='70px'
       }))
     },
-    
 
-    // fetch:async () =>{
-   
-    //     const url = new URL('https://65b1e88a9bfb12f6eafc5897.mockapi.io/platesShop');
+    fetching: (data) => {
+      console.log(data);
+      set((state) => ({
+        dataSource: data
+      }));
+      
+    }
 
-    //     // let x = console.log(get().category)
-    //     url.searchParams.append('category',get().category); 
-    //     url.searchParams.append('page', get().page);
-    //     url.searchParams.append('limit', 9);
-        
-    //     fetch(url, {
-    //     method: 'GET',
-    //     headers: {'content-type':'application/json'},
-    //     }).then(res => {
-    //     if (res.ok) {
-    //         return res.json();
-    //     }
-    //     // handle error
-    //     }).then(tasks => {
-    //     // mockapi returns first 10 tasks that are not completed
-    //         set((state) => ({ shopItems: tasks }));
-            
-    //     }).catch(error => {
-    //     // handle error
-    //     })
-    // } ,
-    // fetchWhole:async () =>{
-   
-    //     const url = new URL('https://65b1e88a9bfb12f6eafc5897.mockapi.io/platesShop');
-
-    //     fetch(url, {
-    //     method: 'GET',
-    //     headers: {'content-type':'application/json'},
-    //     }).then(res => {
-    //     if (res.ok) {
-    //         return res.json();
-    //     }
-    //     // handle error
-    //     }).then(tasks => {
-    //     // mockapi returns first 10 tasks that are not completed
-    //         set((state) => ({ wholeItems: tasks }));
-            
-    //     }).catch(error => {
-    //     // handle error
-    //     })
-    // } 
 }))
+
 export default useStore;
+
 

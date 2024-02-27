@@ -15,6 +15,12 @@ module.exports = {
         primary: "font1",
         secondary: "font2",
       },
+      keyframes: {
+        anime1: {
+          '0%, 100%': { transform:'translateX(200px)'},
+          '50%': { transform:'translateX(0px)'},
+        }
+      },
     },
   },
   plugins: [],

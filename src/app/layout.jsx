@@ -2,6 +2,7 @@
 import "./globals.css";
 import Sidebar from '../../components/sidebar/sidebar'
 import RightSidebar from '../../components/rightSidebar/rightsidebar'
+import Contactme from './../../components/contactme/contactme'
 import { usePathname } from 'next/navigation'
 import { useEffect, useRef } from "react";
 import useStore from '../../zustand/store';
@@ -89,7 +90,8 @@ export default function RootLayout({ children }) {
               {children}
             </div>
             {dataSource!='' && showSidebar && <RightSidebar/>}
-            </body>
+            <Contactme/>
+          </body>
         </html>
       );
 

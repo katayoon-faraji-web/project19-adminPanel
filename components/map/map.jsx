@@ -5,7 +5,8 @@ import * as React from "react";
 import * as ReactDOM from "react-dom";
 import { MapsComponent, LayersDirective, LayerDirective, MarkersDirective, MarkerDirective, Marker,  Zoom, Inject ,MapsTooltip ,Tooltip ,NavigationLine, NavigationLinesDirective, NavigationLineDirective} from '@syncfusion/ej2-react-maps';
 import { registerLicense } from '@syncfusion/ej2-base';
-registerLicense('Ngo9BigBOggjHTQxAR8/V1NAaF1cXmhLYVJxWmFZfVpgdV9EYFZVQGYuP1ZhSXxXdkdiWX9fcnRRQmBfWUc=');
+// registerLicense('Ngo9BigBOggjHTQxAR8/V1NAaF1cXmhLYVJxWmFZfVpgdV9EYFZVQGYuP1ZhSXxXdkdiWX9fcnRRQmBfWUc=');
+registerLicense('Ngo9BigBOggjHTQxAR8/V1NAaF1cXmhKYVZpR2Nbe054flFGal5ZVAciSV9jS3pTdEdkWXdacHZdRmdfWA==');
 
 
 export default function App() {

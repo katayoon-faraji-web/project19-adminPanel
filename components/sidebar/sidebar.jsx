@@ -63,16 +63,16 @@ function NestedList() {
       component="nav"
       aria-labelledby="nested-list-subheader" 
       subheader={
-        <ListSubheader className='bg-[#2f363e] flex justify-start h-[80px] items-center' component="div" id="nested-list-subheader">
-          <ViewListIcon onClick={()=>{toggle_menu()}}  className='cursor-pointer text-[35px] text-[#b5b5c3] mr-4'/>
+        <ListSubheader className='bg-[#24292d] flex justify-start h-[80px] items-center' component="div" id="nested-list-subheader">
+          <ViewListIcon onClick={()=>{toggle_menu()}}  className='cursor-pointer text-[25px] text-[#b5b5c3] mr-4'/>
           <Image  width={80} height={40} alt='pic' src={'https://cdn-icons-png.freepik.com/256/10952/10952201.png'}/>
         </ListSubheader>
       }
     >
-      <Link href={'/'}>
-        <ListItemButton>
+      <Link href={'/'} >
+        <ListItemButton >
           <ListItemIcon>
-            <HomeIcon className='text-[#b5b5c3]' />
+            <HomeIcon className='text-[#b5b5c3] hover:text-white hover:scale-110' />
           </ListItemIcon>
           <ListItemText primary="Dashboard" />
         </ListItemButton>
@@ -81,7 +81,7 @@ function NestedList() {
       <Link href={'/analysis'}>
         <ListItemButton >
           <ListItemIcon>
-            <ShowChartIcon  className='text-[#b5b5c3]'/>
+            <ShowChartIcon  className='text-[#b5b5c3] hover:text-white hover:scale-110'/>
           </ListItemIcon>
           <ListItemText primary="Analysis" />
         </ListItemButton>
@@ -89,7 +89,7 @@ function NestedList() {
   
       <ListItemButton onClick={()=>{setOpen1(!open1);setOpen2(false);setOpen3(false)}}>
         <ListItemIcon>
-          <FactCheckIcon className='text-[#b5b5c3]'/>
+          <FactCheckIcon className='text-[#b5b5c3] hover:text-white hover:scale-110'/>
         </ListItemIcon>
         <ListItemText primary="order" />
         {open1 ? <ExpandLess /> : <ExpandMore />}
@@ -98,7 +98,7 @@ function NestedList() {
         <List component="div" disablePadding>
           <ListItemButton sx={{ pl: 4 }}>
             <ListItemIcon>
-              <NavigateNextIcon className='text-[#b5b5c3]'/>
+              <NavigateNextIcon className='text-[#b5b5c3] hover:text-white hover:scale-110'/>
             </ListItemIcon>
             <ListItemText primary="order list" />
           </ListItemButton>
@@ -108,7 +108,7 @@ function NestedList() {
         <List component="div" disablePadding>
           <ListItemButton sx={{ pl: 4 }}>
             <ListItemIcon>
-              <NavigateNextIcon className='text-[#b5b5c3]'/>
+              <NavigateNextIcon className='text-[#b5b5c3] hover:text-white hover:scale-110'/>
             </ListItemIcon>
             <ListItemText primary="order details" />
           </ListItemButton>
@@ -117,7 +117,7 @@ function NestedList() {
 
       <ListItemButton onClick={()=>{setOpen2(!open2);setOpen1(false);setOpen3(false)}}>
         <ListItemIcon>
-          <RestaurantViewListIcon className='text-[#b5b5c3]'/>
+          <RestaurantViewListIcon className='text-[#b5b5c3] hover:text-white hover:scale-110'/>
         </ListItemIcon>
         <ListItemText primary="menus" />
         {open2 ? <ExpandLess /> : <ExpandMore />}
@@ -126,7 +126,7 @@ function NestedList() {
         <List component="div" disablePadding>
           <ListItemButton sx={{ pl: 4 }}>
             <ListItemIcon>
-              <NavigateNextIcon className='text-[#b5b5c3]'/>
+              <NavigateNextIcon className='text-[#b5b5c3] hover:text-white hover:scale-110'/>
             </ListItemIcon>
             <ListItemText primary="add new menu" />
           </ListItemButton>
@@ -136,7 +136,7 @@ function NestedList() {
         <List component="div" disablePadding>
           <ListItemButton sx={{ pl: 4 }}>
             <ListItemIcon>
-              <NavigateNextIcon className='text-[#b5b5c3]'/>
+              <NavigateNextIcon className='text-[#b5b5c3] hover:text-white hover:scale-110'/>
             </ListItemIcon>
             <ListItemText primary="menu list" />
           </ListItemButton>
@@ -146,7 +146,7 @@ function NestedList() {
         <List component="div" disablePadding>
           <ListItemButton sx={{ pl: 4 }}>
             <ListItemIcon>
-              <NavigateNextIcon className='text-[#b5b5c3]'/>
+              <NavigateNextIcon className='text-[#b5b5c3] hover:text-white hover:scale-110'/>
             </ListItemIcon>
             <ListItemText primary="categories" />
           </ListItemButton>
@@ -155,7 +155,7 @@ function NestedList() {
 
       <ListItemButton onClick={()=>{setOpen3(!open3);setOpen2(false);setOpen1(false)}}>
         <ListItemIcon>
-          <PeopleAltIcon className='text-[#b5b5c3]'/>
+          <PeopleAltIcon className='text-[#b5b5c3] hover:text-white hover:scale-110'/>
         </ListItemIcon>
         <ListItemText primary="customers" />
         {open3 ? <ExpandLess /> : <ExpandMore />}
@@ -164,7 +164,7 @@ function NestedList() {
         <List component="div" disablePadding>
           <ListItemButton sx={{ pl: 4 }}>
             <ListItemIcon>
-              <NavigateNextIcon className='text-[#b5b5c3]'/>
+              <NavigateNextIcon className='text-[#b5b5c3] hover:text-white hover:scale-110'/>
             </ListItemIcon>
             <ListItemText primary="customers list" />
           </ListItemButton>
@@ -174,7 +174,7 @@ function NestedList() {
         <List component="div" disablePadding>
           <ListItemButton sx={{ pl: 4 }}>
             <ListItemIcon>
-              <NavigateNextIcon className='text-[#b5b5c3]'/>
+              <NavigateNextIcon className='text-[#b5b5c3] hover:text-white hover:scale-110'/>
             </ListItemIcon>
             <ListItemText primary="members" />
           </ListItemButton>
@@ -183,7 +183,7 @@ function NestedList() {
 
       <ListItemButton>
         <ListItemIcon>
-          <ShoppingBasketIcon className='text-[#b5b5c3]'/>
+          <ShoppingBasketIcon className='text-[#b5b5c3] hover:text-white hover:scale-110'/>
         </ListItemIcon>
         <ListItemText primary="Products" />
       </ListItemButton>
